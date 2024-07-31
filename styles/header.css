@@ -1,0 +1,207 @@
+.cabecalho{
+    background-color: var(--branco-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.sumir{
+    display: block;
+}
+
+.container_botao:checked ~.container_label > .cabecalho__menu-hamburguer{
+    background-image: url("/assets/Menu\ Aberto.svg");
+}
+.container_botao:checked ~.container_label{
+    background: var(--azul);
+}
+
+.cabecalho__menu-hamburguer{
+    width: 2.3em;
+    height: 1.5em;
+    background-image: url('/assets/Menu.svg');
+    display: inline-block;
+    margin: 1.5em;
+}
+
+.lista_menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 70vw;
+}
+
+.container_botao:checked~.lista_menu{
+    display: block;
+}
+
+.container_botao{
+    display: none;
+}
+
+.lista_menu_titulo, .lista_menu_item{
+    padding: 1em;
+    background-color: var(--branco-principal);
+}
+
+.lista_menu_titulo{
+    color: var(--laranja);
+    font-size: 1rem;
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+}
+
+.lista_menu_link{
+    background: var(--azul);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1rem;
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.container_imagem_perfil{
+    margin-right: 0.8em;
+}
+
+.container_titulo, .container_tablet, .desktop{
+    display: none;
+}
+
+.lista_menu_item:hover{
+    background: var(--azul);
+}
+.lista_menu_item:hover > .lista_menu_link{
+    -webkit-text-fill-color: var(--branco-principal);
+}
+
+@media screen and (min-width: 1024px){
+    .sumir{
+        display: none;
+    }
+    .container_tablet{
+        display: block;
+    }
+    .container_titulo{
+        font-family: var(--fonte-secundaria);
+        font-size: 1.875rem;
+        font-weight: 400;
+        color: var(--preto);
+        display: block;
+    }
+    .container_titulo_negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: var(--preto);
+    }
+    .container_tablet_menu_texto{
+        display: inline;
+    }
+    .container_tablet_botao{
+        font-family: var(--fonte-principal);
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: none;
+        color: var(--preto);
+        padding: 0 1em;
+    }
+    .cabecalho__menu-hamburguer{
+        background-image: none;
+        margin-left: 0;
+        width: 0;
+        height: 0;
+        display: inline;
+        font-family: var(--fonte-principal);
+        font-size: 1rem;
+        font-weight: 400;    
+    }
+    .cabecalho__menu-hamburguer:focus{
+        color: var(--branco-principal);
+        background-color: var(--azul);
+    }
+
+    .lista_menu{
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: auto;
+    }
+
+    .lista_menu_titulo{
+        display: none;
+    }
+    .lista_menu_titulo, .lista_menu_item{
+        padding: 1em;
+        background-color: var(--branco-principal);
+    }
+
+    .lista_menu_item{
+        padding: 1.5em;
+    }
+    
+    .lista_menu_link{
+        background: var(--azul);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 1rem;
+        font-family: var(--fonte-principal);
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    .container_imagem{
+        padding: 0 1em;
+    }
+    .cabecalho{
+        justify-content: space-around;
+    }
+    .container_botao:checked ~.container_label2 > .container_tablet_botao{
+        background: var(--azul);
+        color: var(--branco-principal);
+    }
+    .container_tablet_botao{
+        padding: 0.5em 1em 2em 1em;
+    }
+
+}
+
+@media screen and (min-width: 1728px){
+    .desktop{
+        display: block;
+    }
+    .cabecalho{
+        display: grid;
+        grid-template-columns: 20% 30% 50%;
+    }
+    .container_imagem_perfil{
+        margin: 0;
+    }
+    .container_imagem_desktop{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-family: var(--fonte-principal);
+        color: var(--preto);
+        font-size: 1.25rem;
+        gap: 0.3em;
+    }
+    .container_direita{
+        display: flex;
+        justify-content: right;
+        margin-right: 3em;
+    }
+    .container_esquerda{
+        margin-left: 3em;
+    }
+}

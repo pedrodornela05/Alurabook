@@ -1,0 +1,48 @@
+.carrossel__titulo{
+    color: var(--laranja);
+    background-color: var(--branco-principal);
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 1em 0 0.5em 0;
+    font-family: var(--fonte-principal);
+}
+
+.swiper-slide img{
+    width: 100%;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    display: none;
+}
+
+.swiper-pagination{
+    position: initial;
+    margin: 0.5em 0;
+}
+
+@media screen and (min-width: 1024px){
+    .carrossel__titulo{
+        padding: 2em 0 0.5em 0;
+        font-size: 1.5rem;
+    }
+    .swiper-pagination{
+        margin: 2em 0 3em 0;
+    }
+    .swiper{
+        width: 60%;
+    }
+    .swiper-button-prev, .swiper-button-next{
+        display: block;
+        top: 60%;
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .carrossel_anuncio{
+        display: grid;
+        grid-template-columns: 60% 40%;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+}
